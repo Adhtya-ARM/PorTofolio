@@ -1,0 +1,43 @@
+.logo-container {
+  z-index: 0;
+  width: 400px;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  right: 15%;
+  bottom: 0;
+  left: auto;
+  margin: auto;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    position: absolute;
+    width: 190%; // Slightly larger than the solid logo
+    height: auto;
+    right: -42%;
+    z-index: 1;
+    transform: rotate(30deg);
+    filter: drop-shadow(
+      0 0 15px rgba(255, 215, 0, 0.4)
+    ); // Glowing shadow effect
+
+    path {
+      stroke-width: 4; // Thicker stroke for 3D feel
+      stroke: #EDC531;
+    }
+  }
+
+  .solid-logo {
+    position: absolute;
+    width: 200%;
+    z-index: 2; // Solid logo on top
+    transform: rotate(30deg);
+    opacity: 0;
+    filter: drop-shadow(
+      8px 8px 15px rgba(255, 215, 0, 0.4)
+    ); // Real 3D shadow depth
+  }
+}
