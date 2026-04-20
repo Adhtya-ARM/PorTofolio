@@ -2,7 +2,8 @@ import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
 import Loader from 'react-loaders'
 import { useEffect, useState, useRef } from 'react'
-import gsap from 'gsap-trial'
+import { gsap } from "gsap";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import emailjs from '@emailjs/browser';
 
 const ContactUs = () => {
@@ -13,6 +14,7 @@ const ContactUs = () => {
   const [notification, setNotification] = useState({ show: false, message: '', type: '' })
 
   useEffect(() => {
+    gsap.registerPlugin(DrawSVGPlugin)
     const timer = setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 3000)

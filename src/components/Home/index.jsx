@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
-import gsap from 'gsap-trial'
+import { gsap } from "gsap";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { Link } from 'react-router-dom'
 import AnimatedLetters from '../AnimatedLetters'
 import LogoTitle from '../../assets/images/logo-ar.png'
@@ -16,6 +17,7 @@ const Home = () => {
   const jobArray = ['W','e','b',' ','D','e','v','e','l','o','p','e','r','.']
 
   useEffect(() => {
+    gsap.registerPlugin(DrawSVGPlugin)
     const timer = setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 5000)

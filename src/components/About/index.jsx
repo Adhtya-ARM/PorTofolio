@@ -1,6 +1,7 @@
 import './index.scss'
 import { useEffect, useState, useRef } from 'react'
-import gsap from 'gsap-trial'
+import { gsap } from "gsap";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import AnimatedLetters from '../AnimatedLetters'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -25,6 +26,7 @@ const About = () => {
   const cubeContainerRef = useRef()
 
   useEffect(() => {
+    gsap.registerPlugin(DrawSVGPlugin)
     const timer = setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 5000)
