@@ -47,7 +47,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  zoom: 75%; /* Works in Chrome, Edge, Safari */
+   /* Works in Chrome, Edge, Safari */
   font:
     300 11px/1.4 'Helvetica Neue',
     sans-serif;
