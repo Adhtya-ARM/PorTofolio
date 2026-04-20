@@ -1,7 +1,9 @@
 $primary-color: #EDC531;
 
-@import 'animate.css';
-@import 'loaders.css/src/animations/pacman.scss';
+@use 'animate.css';
+@use 'loaders.css/src/animations/pacman.scss' with (
+  $primary-color: #EDC531
+);
 
 @font-face {
   font-family: 'Helvetica Neue';

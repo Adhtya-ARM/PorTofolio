@@ -1,5 +1,6 @@
 import './index.scss'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
+import gsap from 'gsap-trial'
 import AnimatedLetters from '../AnimatedLetters'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -20,20 +21,49 @@ import Loader from 'react-loaders'
 
 const About = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
+  const haloRef = useRef()
+  const cubeContainerRef = useRef()
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 5000)
 
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e
+      
+      // Moving halo effect (cursor follower)
+      gsap.to(haloRef.current, {
+        x: clientX,
+        y: clientY,
+        duration: 0.8,
+        ease: 'power2.out',
+      })
+
+      // Parallax effect for cubes (matching home logo)
+      const xPos = (clientX / window.innerWidth - 0.5) * 60
+      const yPos = (clientY / window.innerHeight - 0.5) * 60
+
+      gsap.to(cubeContainerRef.current, {
+        x: xPos,
+        y: yPos,
+        duration: 1.2,
+        ease: 'power2.out',
+      })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+    
     return () => {
       clearTimeout(timer)
+      window.removeEventListener('mousemove', handleMouseMove)
     }
   }, [])
 
   return (
     <>
       <div className="container about-page">
+        <div className="halo" ref={haloRef}></div>
         <div className="text-zone">
           <h1>
             <AnimatedLetters
@@ -57,7 +87,7 @@ const About = () => {
             siap memberikan kontribusi signifikan di bidang teknologi informasi.
           </p>
         </div>
-        <div className="stage-cube-container">
+        <div className="stage-cube-container" ref={cubeContainerRef}>
           <div className="cubespinner">
             <div className="face1">
               <FontAwesomeIcon icon={faPhp} color="#DD0031" />

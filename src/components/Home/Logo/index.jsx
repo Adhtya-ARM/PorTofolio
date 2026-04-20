@@ -10,9 +10,8 @@ const Logo = () => {
   const solidLogoRef = useRef()
 
   useEffect(() => {
-    // 1. Selalu pastikan plugin terdaftar di luar atau di awal effect
     gsap.registerPlugin(DrawSVGPlugin)
-    // 2. Gunakan gsap.context() untuk stabilitas di React
+    
     let ctx = gsap.context(() => {
       const tl = gsap.timeline()
       tl.to(bgRef.current, {
@@ -20,7 +19,7 @@ const Logo = () => {
         opacity: 1,
       })
       .from(outlineLogoRef.current, {
-        drawSVG: 0, // Pastikan mulai dari 0 jika ingin terlihat "tergambar"
+        drawSVG: 0,
         duration: 3,
         stagger: 0.2,
         ease: 'power2.inOut',
@@ -30,9 +29,28 @@ const Logo = () => {
         duration: 2,
         ease: 'power2.inOut',
       }, "-=2.5")
-    }, bgRef) // Scope animasi ke container utama
-    // 3. CLEANUP: Sangat penting agar tidak ada animasi yang overlapping
-    return () => ctx.revert()
+    }, bgRef)
+
+    // Mouse movement parallax effect
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e
+      const xPos = (clientX / window.innerWidth - 0.5) * 40
+      const yPos = (clientY / window.innerHeight - 0.5) * 40
+
+      gsap.to(bgRef.current, {
+        x: xPos,
+        y: yPos,
+        duration: 1,
+        ease: 'power2.out',
+      })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+
+    return () => {
+      ctx.revert()
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
   }, [])
 
   return (

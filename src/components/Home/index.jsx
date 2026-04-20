@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
+import gsap from 'gsap-trial'
 import { Link } from 'react-router-dom'
 import AnimatedLetters from '../AnimatedLetters'
 import LogoTitle from '../../assets/images/logo-ar.png'
@@ -8,6 +9,7 @@ import Loader from 'react-loaders'
 
 const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
+  const haloRef = useRef()
 
   const blkArray = ['i', 'e', ' ', 'M', 'a', 'h', 'a', 't', 'm', 'a']
   const dpnArray = [' A', 'd', 'h', 'i', 't', 'y', 'a']
@@ -18,15 +20,28 @@ const Home = () => {
       setLetterClass('text-animate-hover')
     }, 5000)
 
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e
+      gsap.to(haloRef.current, {
+        x: clientX,
+        y: clientY,
+        duration: 0.8,
+        ease: 'power2.out',
+      })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+
     return () => {
       clearTimeout(timer)
+      window.removeEventListener('mousemove', handleMouseMove)
     }
   }, [])
 
-  //ini tidak dimasukan dalam return, menurut AI
   return (
     <>
       <div className="container home-page">
+        <div className="halo" ref={haloRef}></div>
         <div className="text-zone">
           <h1>
             <span className={letterClass}>H</span>
@@ -67,5 +82,6 @@ const Home = () => {
     </>
   )
 }
+
 
 export default Home

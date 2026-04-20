@@ -54,7 +54,6 @@
       margin-bottom: 40px;
       left: 10px;
       &::before {
-        content: '<h1>';
         font-family: 'La Belle Aurore';
         font-size: 18px;
         position: absolute;
@@ -64,7 +63,6 @@
         line-height: 18px;
       }
       &::after {
-        content: '<h1/>';
         font-family: 'La Belle Aurore';
         font-size: 18px;
         position: absolute;
@@ -100,6 +98,38 @@
   .text-animate-hover {
     &:hover {
       color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .tags {
+    left: 20px;
+  }
+  
+  .container {
+    position: relative;
+    top: 60px;
+    height: auto;
+    min-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+
+  .about-page, .contact-page {
+    .text-zone {
+      position: relative;
+      width: 100%;
+      left: 0;
+      transform: none;
+      padding: 100px 30px;
+      box-sizing: border-box;
+
+      h1 {
+        font-size: 40px;
+        &::before, &::after {
+          display: none;
+        }
+      }
     }
   }
 }
