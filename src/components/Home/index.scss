@@ -37,7 +37,7 @@
       }
 
       &::before {
-        content: '<h1>';
+        
         font-family: 'La Belle Aurore';
         color: #EDC531;
         font-size: 18px;
@@ -48,7 +48,7 @@
       }
 
       &::after {
-        content: '<h1/>';
+        
         font-family: 'La Belle Aurore';
         color: #EDC531;
         font-size: 18px;
@@ -135,4 +135,4 @@
       }
     }
   }
-}
+}
