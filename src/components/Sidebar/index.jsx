@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import LogoS from '../../assets/images/logo-ar.png'
 import LogoSubtitle from '../../assets/images/logo_aam.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faHouse, faUser, faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import {
   faGithub,
   faInstagram,
@@ -44,6 +44,15 @@ const Sidebar = () => (
       </NavLink>
     </nav>
     <ul>
+      <li>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://portofolio-adhity.my.canva.site/"
+        >
+          <FontAwesomeIcon icon={faGlobe} color="#4d4d4e" />
+        </a>
+      </li>
       <li>
         <a
           target="_blank"

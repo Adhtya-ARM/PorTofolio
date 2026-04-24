@@ -12,5 +12,5 @@ export default defineConfig({
       },
     },
   },
-  base: process.env.VITE_BASE_URL || "/PorTofolio",
+  // base: process.env.VITE_BASE_URL || "/PorTofolio",
 })
