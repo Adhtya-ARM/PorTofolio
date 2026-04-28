@@ -48,7 +48,7 @@ const Sidebar = () => (
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://canva.link/adhityportofolio/"
+          href="https://adhityportofolio.my.canva.site"
         >
           <FontAwesomeIcon icon={faGlobe} color="#4d4d4e" />
         </a>
