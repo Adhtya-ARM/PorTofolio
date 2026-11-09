@@ -9,23 +9,23 @@ import './FigmaModal.scss'
 const defaultFigmaProjects = [
   {
     id: 'tpq',
-    title: 'TPQ Ar-Rahman',
-    url: 'https://www.figma.com/design/36evZKYoWQQ3mx6ilaylmE/TPQ-Ar-Rahman?node-id=0-1&t=sUsnNZBRcolFjCPa-1',
+    title: 'SI TPQ Ar-Rahman',
+    url: 'https://www.figma.com/proto/36evZKYoWQQ3mx6ilaylmE/TPQ-Ar-Rahman?node-id=1-671&t=XWu9ziJzLuh2dkav-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A671&show-proto-sidebar=1',
   },
   {
     id: 'tiket-bus',
     title: 'Aplikasi Tiket Bus',
-    url: 'https://www.figma.com/design/vXmUmKEekbASiuIFEI8MUg/Aplikasi-Tiket-Bus?node-id=0-1&t=y1458hgerDDaiI8U-1',
+    url: 'https://www.figma.com/proto/vXmUmKEekbASiuIFEI8MUg/Aplikasi-Tiket-Bus?node-id=4-329&t=FpmHRq0rFcRSq2iH-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A329',
   },
   {
     id: 'manganime',
     title: 'Design Ui Manganime',
-    url: 'https://www.figma.com/design/Mdn0wUlC3MQ8fwYxei7Nlb/Design-Ui-Manganime?node-id=0-1&t=LKovIAbnPYTn3vvn-1',
+    url: 'https://www.figma.com/proto/Mdn0wUlC3MQ8fwYxei7Nlb/Design-Ui-Manganime?node-id=10-5&t=kx8EXkBE8lyg9Hyt-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=10%3A5&show-proto-sidebar=1',
   },
   {
     id: 'wedding',
     title: 'Wedding Organizer Web',
-    url: 'https://www.figma.com/design/z7I8UYmHtKZHYmTZsJAUoQ/Wedding-Organizer-Web?node-id=0-1&t=faLOYbx8aaLWdoaP-1',
+    url: 'https://www.figma.com/proto/z7I8UYmHtKZHYmTZsJAUoQ/Wedding-Organizer-Web?node-id=1-29&p=f&t=L3RNeEGAXYcJCc6n-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A29',
   },
 ]
 
