@@ -16,8 +16,6 @@ import FigmaModal from './FigmaModal'
 
 const Sidebar = () => {
   const [isFigmaOpen, setIsFigmaOpen] = useState(false)
-  // Masukkan link Figma kamu di bawah ini ketika sudah siap:
-  const figmaUrl = ''
 
   return (
     <>
@@ -116,7 +114,6 @@ const Sidebar = () => {
       <FigmaModal
         isOpen={isFigmaOpen}
         onClose={() => setIsFigmaOpen(false)}
-        figmaUrl={figmaUrl}
       />
     </>
   )

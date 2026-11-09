@@ -82,6 +82,51 @@
   }
 }
 
+.figma-modal-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #001233;
+  border-bottom: 1px solid rgba(237, 197, 49, 0.15);
+  overflow-x: auto;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(237, 197, 49, 0.3);
+    border-radius: 4px;
+  }
+
+  .tab-btn {
+    background: rgba(255, 255, 255, 0.05);
+    color: #979fac;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 7px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #fff;
+      border-color: rgba(237, 197, 49, 0.5);
+      background: rgba(237, 197, 49, 0.1);
+    }
+
+    &.active {
+      background: #EDC531;
+      color: #001233;
+      border-color: #EDC531;
+      font-weight: 600;
+      box-shadow: 0 0 12px rgba(237, 197, 49, 0.35);
+    }
+  }
+}
+
 .figma-modal-body {
   flex: 1;
   width: 100%;
