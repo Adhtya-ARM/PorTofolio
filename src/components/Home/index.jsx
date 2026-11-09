@@ -72,7 +72,7 @@ const Home = () => {
               idx={37}
             />
           </h1>
-          <h2> Newbie Data Analyst / Newbie Machine Learning </h2>
+          <h2> Data Analyst / IT Support</h2>
           <br />
           <Link to="/contact" className="flat-button">
             Ayo Ngobrol

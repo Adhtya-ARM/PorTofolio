@@ -99,12 +99,19 @@
     text-align: center;
     margin: 0;
     li {
-      a {
+      a,
+      .figma-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin: 0;
         padding: 7px 0;
         display: block;
         font-size: 15px;
         color: #4d4d4e;
         line-height: 16px;
+        transition: color 0.3s ease;
         &:hover svg {
           color: #EDC531;
         }
@@ -167,7 +174,9 @@
       display: flex;
       align-items: center;
       
-      li a {
+      li a,
+      li .figma-btn {
+        width: auto;
         padding: 0 10px;
       }
     }

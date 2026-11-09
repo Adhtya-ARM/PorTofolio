@@ -75,18 +75,18 @@ const About = () => {
             />
           </h1>
           <p>
-            Sarjana Teknik Informatika berpengalaman dalam pengembangan web dan
-            Deep Learning dengan minat utama sebagai Data Analyst, Web
-            Developer, dan pengembang Machine Learning.
+            Sarjana Teknik Informatika dengan IPK 3.54 dan memiliki pengalaman
+            profesional di bidang pengembangan sistem informasi, IT Support dan
+            integrasi CCTV, serta pengolahan data.
           </p>
           <p>
-            Memiliki kemampuan analitis tajam, teliti, adaptif, serta mampu
-            berkolaborasi efektif dalam satu tim untuk merancang solusi inovatif
-            berbasis data.
+            Saya terbiasa menggunakan berbagai teknologi seperti Javascript,
+            Typescript, PHP, Python, React.js, Next.js dan Laravel.
           </p>
           <p>
-            Kombinasi keahlian teknis dan kepribadian proaktif menjadikan saya
-            siap memberikan kontribusi signifikan di bidang teknologi informasi.
+            Saya memiliki kemampuan analitis yang kuat, teliti, adaptif, pemecah
+            masalah, komunikasi serta mampu bekerja sama secara efektif dalam
+            tim.
           </p>
         </div>
         <div className="stage-cube-container" ref={cubeContainerRef}>

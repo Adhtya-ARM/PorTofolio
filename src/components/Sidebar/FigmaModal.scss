@@ -1,0 +1,168 @@
+.figma-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 8, 20, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 16px;
+  box-sizing: border-box;
+  animation: figmaFadeIn 0.25s ease-out forwards;
+}
+
+.figma-modal-container {
+  background: #001233;
+  border: 1px solid rgba(237, 197, 49, 0.35);
+  border-radius: 12px;
+  width: 92vw;
+  max-width: 1100px;
+  height: 86vh;
+  max-height: 820px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(237, 197, 49, 0.15);
+  animation: figmaSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.figma-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: #001845;
+  border-bottom: 1px solid rgba(237, 197, 49, 0.2);
+
+  .modal-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-family: 'Coolvetica', sans-serif, system-ui;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+
+    .figma-icon-title {
+      color: #EDC531;
+      font-size: 20px;
+    }
+  }
+
+  .modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .modal-external-link,
+    .modal-close-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #fff;
+      cursor: pointer;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: #EDC531;
+        color: #001233;
+        border-color: #EDC531;
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+.figma-modal-body {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #020b18;
+
+  .figma-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  .figma-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 32px;
+    text-align: center;
+    color: #fff;
+
+    .empty-icon {
+      font-size: 54px;
+      color: #EDC531;
+      margin-bottom: 18px;
+      opacity: 0.9;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin: 0 0 10px 0;
+      color: #fff;
+      font-family: 'Coolvetica', sans-serif;
+      letter-spacing: 0.5px;
+    }
+
+    p {
+      max-width: 460px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #979fac;
+      margin: 0;
+    }
+  }
+}
+
+@keyframes figmaFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes figmaSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .figma-modal-container {
+    width: 96vw;
+    height: 90vh;
+  }
+
+  .figma-modal-header {
+    padding: 10px 14px;
+
+    .modal-title {
+      font-size: 15px;
+    }
+  }
+}
+
